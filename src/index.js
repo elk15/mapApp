@@ -79,6 +79,18 @@ jQuery(function () {
         $("#longitude").val(x);
         $("#latitude").val(y);
     });
+
+    // add a new location
+    $('form').on('submit', (e) => {
+        e.preventDefault();
+        const name = $("#name").val();
+        const longtitude = parseFloat($("#longitude").val());
+        const latitude = parseFloat($("#latitude").val());
+
+        addPoint(name, longtitude, latitude);
+
+        closeModal();
+    })
 });
 
 
