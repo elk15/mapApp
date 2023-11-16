@@ -16,11 +16,35 @@
         <div id="menu">
             <h1>Locations</h1>
             <div id="btns">
-                <button id="new-location-btn">+ New</button>
+                <button id="open-modal">+ New</button>
                 <button>Calculate route</button>
             </div>
         </div>
     </main>
+    <div id="modal">
+        <h2>Add a new location</h2>
+        <form action="">
+            <div class="form-item">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-item">
+                <label for="longitude">Longitude(X):</label>
+                <input type="number" id="longitude" required>
+            </div>
+            <div class="form-item">
+                <label for="latitude">Latitude(Y):</label>
+                <input type="number" id="latitude" required>
+            </div>
+            <div>
+                <input type="submit" value="Submit" id="submit-location">
+                <button id="close-modal" type="button">Close</button>
+            </div>
+        </form>
+    </div>
+    <div id="overlay">
+
+    </div>
     <script type="module" src="./main.js"></script>
 </body>
 

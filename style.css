@@ -70,3 +70,76 @@ button:hover {
     color: var(--green);
     border: 1px solid var(--green);
 }
+
+#overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: none;
+}
+
+#modal {
+    position: absolute;
+    z-index: 20;
+    top: 20%;
+    left: calc(50% - 200px);
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+
+#modal h2 {
+    font-weight: 500;
+    border-bottom: 2px solid rgb(161, 161, 161);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#modal form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#modal .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 70%;
+}
+
+input {
+    padding: 3px;
+}
+
+#submit-location {
+    cursor: pointer;
+    border: 2px solid var(--green);
+    color: var(--green);
+    font-size: 1.1rem;
+    padding: 5px;
+    background: none;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#close-modal {
+    cursor: pointer;
+    border: 2px solid rgb(194, 64, 64);
+    color: rgb(194, 64, 64);
+}
