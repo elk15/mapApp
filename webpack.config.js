@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require("webpack");
 
 module.exports = {
     entry: './src/index.js',
@@ -6,4 +7,11 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    devtool: 'inline-source-map',
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: require.resolve('jquery'),
+            jQuery: require.resolve('jquery')
+        }),
+    ],
 };

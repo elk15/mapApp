@@ -1,6 +1,7 @@
 export default class Location {
-    constructor(name, x, y) {
+    constructor(name, feature, x, y) {
         this.name = name;
+        this.feature = feature;
         this.x = x;
         this.y = y;
     }
