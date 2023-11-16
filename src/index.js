@@ -47,14 +47,37 @@ const deletePoint = (x, y) => {
     vectorSource.removeFeature(deletedFeature);
 }
 
+const openModal = () => {
+    $("#modal").show();
+    $("#overlay").show();
+}
+
+const closeModal = () => {
+    $("#modal").hide();
+    $("#overlay").hide();
+
+    //reset fields
+    $("#name").val("");
+    $("#longitude").val("");
+    $("#latitude").val("");
+}
+
 jQuery(function () {
-    $("#new-location-btn").on('click', () => {
-        console.log('open new location modal');
+    // open the add new location modal
+    $("#open-modal").on('click', () => {
+        openModal();
     });
 
+    $("#close-modal").on('click', () => {
+        closeModal();
+    });
+
+    // add coordinates by clicking on the map
     map.on('click', (e) => {
         const [x, y] = e.coordinate;
-        addPoint('a point', x, y);
+        openModal();
+        $("#longitude").val(x);
+        $("#latitude").val(y);
     });
 });
 
