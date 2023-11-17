@@ -56,9 +56,9 @@ jQuery(function () {
         if (selectedLocations.length > 1) {
             drawRouteLine();
         } else {
-            $("#error-message").show();
+            $("#error-message").css("opacity", "1");
             setTimeout(function () {
-                $('#error-message').hide();
+                $('#error-message').css("opacity", "0");
             }, 3000);
         }
     })
