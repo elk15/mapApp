@@ -62,6 +62,25 @@ const closeModal = () => {
     $("#latitude").val("");
 }
 
+const displayLocations = () => {
+    $("#locations").empty();
+
+    locations.forEach(l => {
+        const li = $('li')
+        $("#locations").append(`
+            <li>
+                <button><i class="fa-solid fa-bars"></i></button>
+                <button><i class="fa-solid fa-map-location-dot"></i></button>
+                <button id="rename-location"><i class="fa-solid fa-pen"></i></button>
+                <button id="delete-location"><i class="fa-solid fa-trash"></i></button>
+                <h3>${l.name}</h3>
+                Long: ${l.x.toFixed(2)} 
+                Lat: ${l.y.toFixed(2)}
+            </li>
+        `);
+    })
+}
+
 jQuery(function () {
     // open the add new location modal
     $("#open-modal").on('click', () => {
@@ -90,6 +109,8 @@ jQuery(function () {
         addPoint(name, longtitude, latitude);
 
         closeModal();
+
+        displayLocations();
     })
 });
 
