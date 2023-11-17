@@ -143,7 +143,8 @@ input {
     padding: 3px;
 }
 
-#submit-location {
+#submit-location,
+#update-location {
     cursor: pointer;
     border: 2px solid var(--green);
     color: var(--green);
@@ -159,4 +160,8 @@ input {
     cursor: pointer;
     border: 2px solid rgb(194, 64, 64);
     color: rgb(194, 64, 64);
+}
+
+#update-location {
+    display: none;
 }
