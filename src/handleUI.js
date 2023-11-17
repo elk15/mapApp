@@ -2,6 +2,8 @@ import { locations, deletePoint } from "./handleMap";
 
 export let idToUpdate = null;
 
+export let selectedLocations = [];
+
 export const openModal = () => {
     $("#modal").show();
     $("#overlay").show();
@@ -27,9 +29,16 @@ export const displayLocations = () => {
 
     locations.forEach(l => {
         $("#locations").append(`
-            <li>
-                <button><i class="fa-solid fa-bars"></i></button>
-                <button><i class="fa-solid fa-map-location-dot"></i></button>
+            <li data-id="${l.id}" class="${selectedLocations.includes(l.id) ? "selected" : ""}">
+                <button class="add-location" data-id="${l.id}">
+                    ${selectedLocations.includes(l.id) ?
+                `<i class="fa-solid fa-x"></i>`
+
+                :
+                `<i class="fa-solid fa-map-location-dot"></i>`
+
+            }
+                </button>
                 <button class="edit-location" data-id="${l.id}">
                     <i class="fa-solid fa-pen"></i>
                 </button>
@@ -68,4 +77,18 @@ export const displayLocations = () => {
         $("#submit-location").hide();
         openModal();
     })
+
+    // add location to route
+    $('.add-location').on('click', function () {
+        const id = $(this).data("id");
+
+        if (!$(this).parent('li').hasClass("selected")) {
+            selectedLocations.push(id);
+        } else {
+            selectedLocations = selectedLocations.filter(item => item !== id);
+        }
+
+        displayLocations();
+    })
 }
+

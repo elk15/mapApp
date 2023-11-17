@@ -7,11 +7,21 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
     devtool: 'inline-source-map',
     plugins: [
         new webpack.ProvidePlugin({
-            $: require.resolve('jquery'),
-            jQuery: require.resolve('jquery')
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery'",
+            "window.$": "jquery"
         }),
     ],
 };

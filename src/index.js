@@ -1,5 +1,7 @@
-import { map, addPoint, updatePoint } from './handleMap';
-import { openModal, closeModal, displayLocations, idToUpdate } from './handleUI';
+import { map, addPoint, updatePoint, updateOrder, drawRouteLine } from './handleMap';
+import { openModal, closeModal, displayLocations, idToUpdate, selectedLocations, } from './handleUI';
+require('webpack-jquery-ui/sortable');
+
 
 
 jQuery(function () {
@@ -37,6 +39,20 @@ jQuery(function () {
         closeModal();
 
         displayLocations();
+    })
+
+    // make locations sortable
+    $("#locations").sortable({
+        update: function (event, ui) {
+            updateOrder();
+        }
+    });
+
+    // draw route line on map
+    $("#calculate-route").on("click", function () {
+        if (selectedLocations.length > 1) {
+            drawRouteLine();
+        }
     })
 
 });
