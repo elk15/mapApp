@@ -165,3 +165,8 @@ input {
 #update-location {
     display: none;
 }
+
+.selected {
+    background-color: rgb(51, 55, 56);
+    ;
+}
