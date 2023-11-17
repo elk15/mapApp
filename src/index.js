@@ -1,5 +1,5 @@
-import { map, addPoint, updatePoint, updateOrder, drawRouteLine } from './handleMap';
-import { openModal, closeModal, displayLocations, idToUpdate, selectedLocations, } from './handleUI';
+import { map, addPoint, updatePoint, updateOrder, drawRouteLine, deleteRouteLine } from './handleMap';
+import { openModal, closeModal, displayLocations, idToUpdate, selectedLocations, clearSelectedLocations, } from './handleUI';
 require('webpack-jquery-ui/sortable');
 
 
@@ -53,6 +53,11 @@ jQuery(function () {
         if (selectedLocations.length > 1) {
             drawRouteLine();
         }
+    })
+
+    $("#reset-route").on("click", function () {
+        deleteRouteLine();
+        clearSelectedLocations();
     })
 
 });

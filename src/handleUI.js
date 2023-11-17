@@ -92,3 +92,8 @@ export const displayLocations = () => {
     })
 }
 
+export const clearSelectedLocations = () => {
+    selectedLocations = [];
+    displayLocations();
+}
+

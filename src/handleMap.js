@@ -39,8 +39,13 @@ const vectorLayerRoutes = new VectorLayer({
 });
 map.addLayer(vectorLayerRoutes);
 
-export const drawRouteLine = () => {
+export const deleteRouteLine = () => {
     vectorSourceRoutes.clear();
+}
+
+
+export const drawRouteLine = () => {
+    deleteRouteLine();
 
     const routePoints = [];
     locations.forEach(l => {
@@ -95,7 +100,8 @@ export const updatePoint = (id, name, longtitude, latitude) => {
         }
         return l;
     })
-    vectorSourceRoutes.clear();
+
+    deleteRouteLine();
 }
 
 export const deletePoint = (id) => {
@@ -104,7 +110,8 @@ export const deletePoint = (id) => {
     const deletedLocation = locations.splice(locationIndex, 1);
     const deletedFeature = deletedLocation[0].feature;
     vectorSourcePoints.removeFeature(deletedFeature);
-    vectorSourceRoutes.clear();
+
+    deleteRouteLine();
 }
 
 export const updateOrder = () => {
@@ -127,6 +134,7 @@ export const updateOrder = () => {
     updatedLocations.forEach(l => {
         locations.push(l);
     })
-    vectorSourceRoutes.clear();
+
+    deleteRouteLine();
 }
 
