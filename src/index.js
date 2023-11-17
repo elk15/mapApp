@@ -2,7 +2,10 @@ import { map, addPoint, updatePoint, updateOrder, drawRouteLine, deleteRouteLine
 import { openModal, closeModal, displayLocations, idToUpdate, selectedLocations, clearSelectedLocations, } from './handleUI';
 require('webpack-jquery-ui/sortable');
 
+addPoint("Greece", 23, 38);
+displayLocations();
 
+let isMenuOpen = true;
 
 jQuery(function () {
     // open the add new location modal
@@ -63,6 +66,17 @@ jQuery(function () {
     $("#reset-route").on("click", function () {
         deleteRouteLine();
         clearSelectedLocations();
+    })
+
+    $("#toggle-menu").on("click", function () {
+        const menu = $(this).parent("#menu");
+        if (isMenuOpen) {
+            menu.css("transform", "translateX(95%)")
+            isMenuOpen = false;
+        } else {
+            menu.css("transform", "translateX(0%)")
+            isMenuOpen = true;
+        }
     })
 
 });
