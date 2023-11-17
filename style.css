@@ -181,3 +181,22 @@ input {
     transition: opacity 500ms ease-in-out;
     display: none;
 }
+
+.ol-zoom-in,
+.ol-zoom-out {
+    background-color: var(--green);
+    border: none;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.ol-zoom-in {
+    margin-right: 5px;
+}
+
+.ol-rotate-reset,
+.ol-attribution {
+    display: none;
+}
