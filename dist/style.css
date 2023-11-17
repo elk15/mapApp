@@ -13,6 +13,11 @@
     --green: rgb(102, 194, 156);
 }
 
+i {
+
+    pointer-events: none;
+}
+
 html,
 body {
     margin: 0;

@@ -1,5 +1,6 @@
 export default class Location {
-    constructor(name, feature, x, y) {
+    constructor(id, name, feature, x, y) {
+        this.id = id;
         this.name = name;
         this.feature = feature;
         this.x = x;
