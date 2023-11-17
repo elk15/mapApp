@@ -184,7 +184,7 @@ input {
     color: white;
     padding: 10px;
     transition: opacity 500ms ease-in-out;
-    display: none;
+    opacity: 0;
 }
 
 .ol-zoom-in,
@@ -219,5 +219,12 @@ input {
 @media (max-width: 600px) {
     #menu {
         left: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    #error-message {
+        transform: translateX(0%);
+        left: calc(50% - 100px);
     }
 }
