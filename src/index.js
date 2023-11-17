@@ -52,6 +52,11 @@ jQuery(function () {
     $("#calculate-route").on("click", function () {
         if (selectedLocations.length > 1) {
             drawRouteLine();
+        } else {
+            $("#error-message").show();
+            setTimeout(function () {
+                $('#error-message').hide();
+            }, 3000);
         }
     })
 

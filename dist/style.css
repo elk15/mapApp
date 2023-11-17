@@ -42,6 +42,7 @@ main {
     width: 100%;
     background-color: rgb(74, 78, 80);
     border-left: 2px solid rgb(43, 43, 43);
+    position: relative;
 }
 
 h1 {
@@ -168,5 +169,15 @@ input {
 
 .selected {
     background-color: rgb(51, 55, 56);
-    ;
+}
+
+#error-message {
+    position: absolute;
+    top: 10px;
+    transform: translateX(-110%);
+    background-color: rgb(243, 115, 115);
+    color: white;
+    padding: 10px;
+    transition: opacity 500ms ease-in-out;
+    display: none;
 }
